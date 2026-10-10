@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<h1>User Edit</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    {% bootstrap_form user_change_form %}
+    <input type="submit" value="Submit"/>
+</form>
+
+<a href="{% url 'accounts:delete' %}" class="btn btn-danger">회원탈퇴</a>
+<a href="{% url 'accounts:password' %}">비밀밀호 변경</a>
+
+{% endblock %}
+
+

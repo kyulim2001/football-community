@@ -1,0 +1,107 @@
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  flex-shrink: 0;
+
+  .logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: #222;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+
+    &:hover {
+      color: #03C75A;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  gap: 120px;
+  flex-grow: 1;
+  justify-content: center;
+
+  a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #03C75A;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .nickname {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+      color: #03C75A;
+    }
+  }
+
+  .logoutButton,
+  .authButton {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .logoutButton {
+    background-color: #03C75A;
+    color: #fff;
+
+    &:hover {
+      background-color: #005fcc;
+    }
+  }
+
+  .authButton {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+
+    &:hover {
+      background-color: #e9e9e9;
+    }
+  }
+}
+
+.logoImg {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  vertical-align: bottom;
+}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<h1>Profile Update</h1>
+
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form profile_form %}
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}

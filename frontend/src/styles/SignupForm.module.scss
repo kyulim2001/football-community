@@ -1,0 +1,92 @@
+.signupForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  color: #1a1a1a;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .section {
+    margin-bottom: 24px;
+
+    label {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fafafa;
+
+      &:focus {
+        border-color: #03C75A;
+        outline: none;
+        background-color: #fff;
+      }
+    }
+
+    button {
+      margin-top: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      background-color: #03C75A;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #03C75A;
+      }
+    }
+  }
+
+  .verificationGroup {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+
+    input {
+      flex: 1;
+    }
+
+    button {
+      flex-shrink: 0;
+      padding: 10px 16px;
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    margin-top: 32px;
+    padding: 14px;
+    background-color: #03C75A;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #03C75A;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.button {
+  padding: 9px 18px;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #03C75A;
+    color: #fff;
+    border-color: #03C75A;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+}

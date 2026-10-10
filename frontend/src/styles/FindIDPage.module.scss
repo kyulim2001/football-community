@@ -1,0 +1,46 @@
+.findContainer {
+  padding: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #03C75A;;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 12px;
+
+    &:hover {
+      background-color: #03C75A;;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  strong {
+    color: #d9534f;
+  }
+}

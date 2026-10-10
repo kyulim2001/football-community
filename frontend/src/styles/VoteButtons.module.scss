@@ -1,0 +1,54 @@
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.voteBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #f4f4f6;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+  svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #e9e9eb;
+  }
+
+  &.active {
+    background-color: #ffeef0;
+    color: #e0245e;
+
+    svg {
+      color: #e0245e;
+      transform: scale(1.15);
+    }
+  }
+}
+
+.utilityBtn {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: #f2f3f5;
+  color: #555;
+  border: 1px solid #ddd;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e6e7ea;
+  }
+}
