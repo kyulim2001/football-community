@@ -18,3 +18,5 @@ frontend/build/
 .DS_Store
 .idea/
 .vscode/
+
+monitoring/alertmanager/discord_webhook

@@ -13,7 +13,7 @@
 | Database / Cache | MySQL 8.0, Redis 7 (Channels layer) |
 | Infra | Docker, Docker Compose, Nginx (reverse proxy), Daphne (ASGI), AWS EC2 (Ubuntu 24.04) |
 | Orchestration | k3s (Kubernetes), Traefik Ingress |
-| Monitoring | Prometheus, Grafana, node_exporter, cAdvisor |
+| Monitoring | Prometheus, Alertmanager(Discord), Grafana, node_exporter, cAdvisor |
 
 ## 아키텍처
 
@@ -50,12 +50,14 @@ docker compose up -d --build
 ```bash
 cd monitoring
 cp .env.example .env
+echo "<Discord 웹훅 URL>" > alertmanager/discord_webhook
 docker compose up -d
 ```
 
 - node_exporter: 서버 CPU, 메모리, 디스크, 네트워크 지표 수집
 - cAdvisor: 컨테이너별 CPU, 메모리 지표 수집
 - Prometheus: 지표 저장과 알람 규칙 평가 (대상 다운, CPU 80%, 메모리 85%, swap 50%, 디스크 80%)
+- Alertmanager: 발생한 알람을 Discord 채널로 전송 (해결 시 해제 알림 포함)
 - Grafana: 대시보드 자동 프로비저닝
 
 Prometheus(9090)와 Grafana(3000)는 서버의 127.0.0.1에만 바인딩되어 외부에 노출되지 않으며, SSH 터널로 접속합니다.
