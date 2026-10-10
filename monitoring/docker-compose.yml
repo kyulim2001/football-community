@@ -33,6 +33,7 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.path=/prometheus
       - --storage.tsdb.retention.time=7d
+      - --web.external-url=http://localhost:9090
     extra_hosts:
       - host.docker.internal:host-gateway
     ports:
@@ -50,6 +51,7 @@ services:
     command:
       - --config.file=/etc/alertmanager/alertmanager.yml
       - --storage.path=/alertmanager
+      - --web.external-url=http://localhost:9093
     ports:
       - "127.0.0.1:9093:9093"
     volumes:

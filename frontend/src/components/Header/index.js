@@ -43,6 +43,7 @@ return (
         <Link to="/board/bundesliga">분데스리가</Link>
         <Link to="/board/serie-a">세리에A</Link>
         <Link to="/board/ligue-1">리그앙</Link>
+        <Link to="/chat">채팅</Link>
       </nav>
 
       <div className={styles.right}>

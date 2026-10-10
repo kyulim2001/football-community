@@ -18,7 +18,7 @@ urlpatterns = [
     
     path('api/reports/', include('report.urls')),
     
-    path("chat/", include("chat.urls")),
+    path("api/chat/", include("chat.urls")),
 ]
 
 # 개발 환경에서 미디어 파일 제공
