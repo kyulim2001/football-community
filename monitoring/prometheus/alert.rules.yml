@@ -1,0 +1,47 @@
+groups:
+  - name: server
+    rules:
+      - alert: TargetDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "{{ $labels.job }} 수집 대상이 응답하지 않음"
+          description: "{{ $labels.instance }} 가 1분 이상 down 상태입니다."
+
+      - alert: HighCpuUsage
+        expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU 사용률 80% 초과"
+          description: "현재 CPU 사용률 {{ $value | printf \"%.1f\" }}%"
+
+      - alert: HighMemoryUsage
+        expr: (1 - node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100 > 85
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "메모리 사용률 85% 초과"
+          description: "현재 메모리 사용률 {{ $value | printf \"%.1f\" }}%"
+
+      - alert: SwapInUse
+        expr: (1 - node_memory_SwapFree_bytes / node_memory_SwapTotal_bytes) * 100 > 50
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "swap 사용률 50% 초과"
+          description: "물리 메모리가 부족해 swap을 많이 쓰고 있습니다. 현재 {{ $value | printf \"%.1f\" }}%"
+
+      - alert: DiskSpaceLow
+        expr: (1 - node_filesystem_avail_bytes{mountpoint="/", fstype!="rootfs"} / node_filesystem_size_bytes{mountpoint="/", fstype!="rootfs"}) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "디스크 사용률 80% 초과"
+          description: "루트 볼륨 사용률 {{ $value | printf \"%.1f\" }}%"
